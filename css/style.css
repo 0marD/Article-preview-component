@@ -1,0 +1,224 @@
+:root {
+    /* ------ colors ------*/
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+    --white: hsl(0, 0%, 100%);
+    /*  font size */
+    font-size: 13px;
+}
+
+* {
+    transition: all 0.3s;
+}
+
+body {
+    font-family: "Manrope", sans-serif;
+    background-color: var(--Light-Grayish-Blue);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    font-weight: 500;
+    color: var(--Desaturated-Dark-Blue);
+    line-height: 1.5;
+}
+
+.card {
+    margin: auto;
+    background-color: var(--white);
+    width: 85%;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 1em;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 20px 0px;
+    position: relative;
+}
+
+.card__cover {
+    width: 100%;
+    height: 17em;
+    background-size: cover;
+    background-image: url("../images/drawers.jpg");
+}
+
+.card__body {
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.card__heading,
+.card__contents,
+.profile {
+    width: 80%;
+    margin: auto;
+}
+
+.card__heading {
+    color: var(--Very-Dark-Grayish-Blue);
+    font-weight: 700;
+    font-size: 1.17rem;
+}
+
+.card__contents {
+    margin-top: 1em;
+    font-size: 0.99rem;
+}
+
+/*  ------- profile -------- */
+.profile {
+    display: flex;
+    margin-top: 2em;
+}
+
+.profile__avatar {
+    width: 3em;
+    height: 3em;
+    background-size: cover;
+    border-radius: 50%;
+    background-image: url("../images/avatar-michelle.jpg");
+}
+
+.profile__share {
+    width: 2.5em;
+    height: 2.5em;
+    background-color: var(--Light-Grayish-Blue);
+    padding: 0.65em;
+    border-radius: 50%;
+    position: absolute;
+    right: 13%;
+    bottom: 1.25em;
+    z-index: 999;
+}
+
+.profile__share path {
+    fill: var(--Desaturated-Dark-Blue);
+}
+
+.profile__share:hover path {
+    fill: var(--Light-Grayish-Blue);
+}
+
+.profile__share:hover {
+    cursor: pointer;
+    background: var(--Desaturated-Dark-Blue);
+}
+
+.profile__data {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+    justify-content: space-between;
+}
+
+.data__name {
+    font-weight: 700;
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.share {
+    background-color: var(--Very-Dark-Grayish-Blue);
+    height: 5em;
+    color: var(--Light-Grayish-Blue);
+    display: none;
+    align-items: center;
+    padding: 0 2em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.show {
+    display: flex;
+}
+
+.rotate {
+    transform: scale(1.1) rotate(365deg);
+}
+
+.share__heading {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    color: var(--Grayish-Blue);
+}
+
+.share__social {
+    display: flex;
+    margin-left: 1.5em;
+    gap: 1em;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .card {
+        max-width: none;
+        width: 740px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        overflow: visible;
+    }
+
+    .card__cover {
+        height: 21em;
+        border-radius: 1em 0 0 1em;
+    }
+
+    .card__heading {
+        font-size: 1.5rem;
+    }
+
+    .card__contents {
+        font-size: 0.85rem;
+    }
+
+    .profile {
+        display: flex;
+    }
+
+    .profile__share {
+        right: 7%;
+    }
+
+    .share {
+        width: 30%;
+        position: absolute;
+        right: -5%;
+        bottom: 25%;
+        height: 3.5em;
+        border-radius: 1em;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 10px 20px 0px;
+    }
+
+    .share:after {
+        content: "";
+        border: 15px solid;
+        border-color: var(--Very-Dark-Grayish-Blue) transparent transparent;
+        position: absolute;
+        bottom: -65%;
+        right: 42%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    :root {
+        font-size: 15.5px;
+    }
+
+    .card {
+        width: 900px;
+    }
+
+    .card__cover {
+        height: 21em;
+    }
+
+    .share:after {
+        content: "";
+        border: 22px solid;
+        border-color: var(--Very-Dark-Grayish-Blue) transparent transparent;
+        position: absolute;
+        bottom: -80%;
+        right: 39%;
+    }
+}
